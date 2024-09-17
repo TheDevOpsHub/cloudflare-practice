@@ -1,21 +1,15 @@
-provider "aws" {
-  region = var.region_us
-}
+resource "aws_instance" "vn_instance" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  key_name      = var.key_name
 
-provider "aws" {
-  alias  = "vn"
-  region = var.region_vn
-}
+  user_data = file("userdata/vn.sh")
 
-# Include instance and security group definitions
-module "us_instance" {
-  source = "./us_instance.tf"
-}
+  security_groups = [aws_security_group.allow_http.name]
 
-module "vn_instance" {
-  source = "./vn_instance.tf"
-}
+  provider = aws.vn
 
-module "security_group" {
-  source = "./security_group.tf"
+  tags = {
+    Name = "VN EC2 instance"
+  }
 }
