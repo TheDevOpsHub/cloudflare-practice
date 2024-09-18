@@ -27,7 +27,7 @@ Note the public IP for later use
 ### VN server
 
 ```bash
-cd us/web-server-us
+cd vn/web-server-vn
 
 terraform init
 
