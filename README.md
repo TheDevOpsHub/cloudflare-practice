@@ -9,6 +9,7 @@ Practice Cloudflare with AWS and Terraform
 - Terraform: https://developer.hashicorp.com/terraform/docs
 
 ## Deploy AWS infra
+We will deploy 2 webservers at VN and US location on 2 EC2 instances
 
 ### US server
 
