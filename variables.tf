@@ -20,8 +20,10 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Name of the SSH key pair"
+  default     = "cloudflare-demo"
 }
 
-variable "vpc_id" {
-  description = "VPC ID for security group"
-}
+# variable "vpc_id" {
+#   description = "VPC ID for security group"
+#   default     = "cloudflare-demo"
+# }
